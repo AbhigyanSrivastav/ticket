@@ -2,10 +2,11 @@ import Issue from '../models/issue.model.js';
 
 // Create a new issue
 export const createIssue = async (req, res) => {
+    console.log('req.user._id', req.user)
     try {
         const newIssue = new Issue({
             ...req.body,
-            createdBy: req.user._id // Attach the user who created the issue
+            createdBy: req.user.userId // Attach the user who created the issue
         });
         const savedIssue = await newIssue.save();
         res.status(201).json(savedIssue);

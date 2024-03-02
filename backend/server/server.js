@@ -20,7 +20,7 @@ app.use(cors());
 dbConnect();
 
 // Mount Routes
-app.use('/api/issues', authMiddleware, issueRoutes); //  Issues require authentication
+app.use('/api/issues', issueRoutes); //  Issues require authentication
 app.use('/api/auth', authRoutes);
 
 // Handle Errors (ideally with a more robust error handling middleware)

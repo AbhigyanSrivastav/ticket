@@ -6,6 +6,7 @@ const issueSchema = new Schema({
   product: { type: String, required: true },
   page: String,
   description: { type: String, required: true },
+  active:{type:Boolean,default:true},
   priority: {
     type: String,
     enum: ["High", "Medium", "Low"], // Limit priority to set values
